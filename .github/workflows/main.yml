@@ -49,7 +49,9 @@ jobs:
         git checkout -b list
         git fetch origin
         git pull origin list
-        git rebase origin/list
+
         git add ./ultralist.txt
         git commit -m "Updated list"
         git push --set-upstream origin list
+
+# git rebase origin/list
