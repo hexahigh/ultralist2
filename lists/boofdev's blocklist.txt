@@ -1,0 +1,9 @@
+skolenmin.cdu.no##.dictionary-toast-message.btn-no-icon.btn-align-center.btn-default.btn-md.btn
+megadb.net##iframe:nth-of-type(3)
+sythical.com##.swal2-show.swal2-icon-error.swal2-modal.swal2-popup
+sythical.com##.swal2-backdrop-show.swal2-center.swal2-container
+catbox.moe/*/pic.js
+create.kahoot.it##.jTNAvS.blur__BlurStyled-sc-13qfwk1-0
+battledudes.io##.menu_element_hard_shadow.gifts.gift_right
+battledudes.io##.menu_element_hard_shadow.gifts.gift_long
+amnesty.no###kindly-chat-api > div

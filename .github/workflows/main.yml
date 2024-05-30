@@ -1,0 +1,55 @@
+name: Update list
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron:  '*/15 * * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install pnpm
+      run: npm install -g pnpm
+
+    - name: Install Dependencies
+      run: pnpm i
+
+    - name: Download Files
+      run: node ./download.js
+      
+    - name: Merge Files
+      run: node ./merge.js
+
+    - name: Run utilites
+      run: node ./util.js
+
+    #- name: Commit
+    #  uses: EndBug/add-and-commit@v9
+    #  with:
+    #   add: '.'
+    #   author_name: 'updater'
+    #   author_email: 'admin@boofdev.eu'
+    #   message: 'Updated list'
+    #   push: '--set-upstream origin list'
+
+    - name: Push 
+      run: |
+        git config --global user.email "admin@boofdev.eu"
+        git config --global user.name "updater"
+        git checkout -b list
+        git fetch origin
+        git pull origin list
+        git rebase origin/list
+        git add ./ultralist.txt
+        git commit -m "Updated list"
+        git push --set-upstream origin list
