@@ -46,6 +46,7 @@ jobs:
       run: |
         git config --global user.email "admin@boofdev.eu"
         git config --global user.name "updater"
+        git config pull.rebase false
         git checkout -b list
         git fetch origin
         git pull origin list
